@@ -21,7 +21,7 @@ namespace Incendios
         {
             main.Title.Visibility = Visibility.Collapsed;
             main.GameGrid.Visibility = Visibility.Collapsed;
-            main.OptionSelector.Visibility = Visibility.Collapsed;
+            main.SimPrep.Visibility = Visibility.Collapsed;
         }
 
         public void ShowGrid()
@@ -29,9 +29,9 @@ namespace Incendios
             main.GameGrid.Visibility = Visibility.Visible;
         }
 
-        public void ShowOptionSelector()
+        public void ShowSimPrep()
         {
-            main.OptionSelector.Visibility = Visibility.Visible;
+            main.SimPrep.Visibility = Visibility.Visible;
         }
     }
 }

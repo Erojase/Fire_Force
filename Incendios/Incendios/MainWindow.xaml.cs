@@ -71,7 +71,7 @@ namespace Incendios
         private void btnPrivate_Click(object sender, RoutedEventArgs e)
         {
             mgr.HideAll();
-            mgr.ShowOptionSelector();
+            mgr.ShowSimPrep();
         }
     }
 }

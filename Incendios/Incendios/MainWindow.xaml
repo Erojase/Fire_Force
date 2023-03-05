@@ -110,7 +110,39 @@
 
             </Grid>
         </Grid>
-        <Grid x:Name="OptionSelector" Visibility="Visible">
+        <Grid x:Name="Config" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+
+
+
+            <Grid x:Name="SaveButtons" Grid.Row="2" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Leave" Grid.Column="1" Grid.Row="0" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}"/>
+                <Button x:Name="Save_Leave" Grid.Column="3" Grid.Row="0" Content="{Binding Source=Salir y guardar}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="SimPrep" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
@@ -133,11 +165,8 @@
                 </Grid.RowDefinitions>
                 <Grid.Background>
                     <LinearGradientBrush StartPoint="1,0" EndPoint="1,1" Opacity="0.85" >
-
-                        <GradientStop Color="Blue" Offset="0" />
-
-                        <GradientStop Color="Red" Offset="0.5" />
-
+                        <GradientStop Color="#FFFEFFA0" Offset="0" />
+                        <GradientStop Color="#FFA8F768" Offset="0.5" />
                     </LinearGradientBrush>
                 </Grid.Background>
             </Grid>
