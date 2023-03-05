@@ -1,0 +1,17 @@
+﻿<Application x:Class="Incendios.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Incendios"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+       <DataTemplate x:Key="TitleButtons">
+           <Viewbox>
+                <TextBlock Text="{Binding}"/>
+            </Viewbox>
+       </DataTemplate>
+
+       
+        
+    </Application.Resources>
+</Application>

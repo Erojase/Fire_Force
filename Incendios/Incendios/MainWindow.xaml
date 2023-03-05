@@ -1,0 +1,197 @@
+﻿<Window x:Class="Incendios.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Incendios"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+
+
+    <Grid x:Name="main">
+        <Grid x:Name="Title" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/backgroud.jpg" TileMode="None"/>
+            </Grid.Background>
+
+            <Button x:Name="Mute" Content="{Binding Source=Mute}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Row="0" HorizontalAlignment="Right" Click="Mute_Click"/>
+
+            <Image x:Name="Title_Letters" Grid.Row="1" Source="/Images/fire_force.png" HorizontalAlignment="Center" />
+
+
+            <StackPanel x:Name="AnyKey" Grid.Row="3" VerticalAlignment="Center" Visibility="Visible">
+                <Label Content="Press any key to continue" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="36"/>
+            </StackPanel>
+
+
+            <Grid x:Name="Opts" Grid.Row="3" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnComenzar" Content="{Binding Source=Comenzar}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch" FontSize="24" Click="btnComenzar_Click"/>
+
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnConfig" Content="{Binding Source=Configuracion}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnCreditos" Content="{Binding Source=Creditos}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid  Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnSalir" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="Login"  Grid.Row="3" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="btnLogin" Grid.Row="1" Grid.Column="1" Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
+                
+                <Button x:Name="btnRegister" Grid.Row="3" Grid.Column="1" Content="{Binding Source=Register}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnRegister_Click"/>
+                
+                <Button x:Name="btnPrivate" Grid.Row="5" Grid.Column="1" Content="{Binding Source=Private}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnPrivate_Click"/>
+
+
+            </Grid>
+        </Grid>
+        <Grid x:Name="OptionSelector" Visibility="Visible">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/low_poly_terrain.jpg" TileMode="None"/>
+            </Grid.Background>
+            <Grid x:Name="Options" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="1,1" Opacity="0.85" >
+
+                        <GradientStop Color="Blue" Offset="0" />
+
+                        <GradientStop Color="Red" Offset="0.5" />
+
+                    </LinearGradientBrush>
+                </Grid.Background>
+            </Grid>
+
+            <Grid x:Name="Display" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
+        <Grid x:Name="GameGrid" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <!--14-->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <!--8-->
+            </Grid.RowDefinitions>
+
+
+            <Border x:Name="brd_btn" BorderBrush="Black" BorderThickness="2" Grid.Row="5" Grid.Column="5">
+                <Button x:Name="btn" Background="green">
+                    <Image Source="images/forest.jpg" Stretch="Fill" />
+                </Button>
+            </Border>
+
+        </Grid>
+    </Grid>
+</Window>
