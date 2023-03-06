@@ -122,10 +122,33 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
 
+            <Grid x:Name="ConfigOptions" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <ComboBox x:Name="Resolutions">
+                    <ComboBoxItem x:Name="Full">
+                        <Button x:Name="btn_Full" Content="{Binding Source=Full Size}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem x:Name="Medium">
+                        <Button x:Name="btnFull" Content="{Binding Source=Medium}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem x:Name="Small">
+                        <Button x:Name="btn_ull" Content="{Binding Source=Small}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    </ComboBoxItem>
+                </ComboBox>
+                
+            </Grid>
 
 
 
-            <Grid x:Name="SaveButtons" Grid.Row="2" Grid.Column="1">
+                <Grid x:Name="SaveButtons" Grid.Row="2" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
