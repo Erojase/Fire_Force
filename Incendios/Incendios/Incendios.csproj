@@ -63,7 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IAudioFilles.cs" />
+    <Compile Include="IAudioFiles.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -108,6 +108,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Audio\Fire_Force_Main.mp3" />
+    <Resource Include="Images\water.png" />
+    <Resource Include="Images\weed.png" />
+    <Resource Include="Images\waste.png" />
+    <Resource Include="Images\tree.png" />
+    <Resource Include="Images\fire.png" />
     <Resource Include="Images\low_poly_terrain.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

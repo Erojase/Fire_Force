@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         
-       <DataTemplate x:Key="TitleButtons">
+       <DataTemplate x:Key="ResponsiveText">
            <Viewbox>
                 <TextBlock Text="{Binding}"/>
             </Viewbox>

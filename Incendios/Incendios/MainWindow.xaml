@@ -25,7 +25,7 @@
                 <ImageBrush ImageSource="/Images/backgroud.jpg" TileMode="None"/>
             </Grid.Background>
 
-            <Button x:Name="Mute" Content="{Binding Source=Mute}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Row="0" HorizontalAlignment="Right" Click="Mute_Click"/>
+            <Button x:Name="Mute" Content="{Binding Source=Mute}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Row="0" HorizontalAlignment="Right" Click="Mute_Click"/>
 
             <Image x:Name="Title_Letters" Grid.Row="1" Source="/Images/fire_force.png" HorizontalAlignment="Center" />
 
@@ -53,7 +53,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnComenzar" Content="{Binding Source=Comenzar}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch" FontSize="24" Click="btnComenzar_Click"/>
+                    <Button x:Name="btnComenzar" Content="{Binding Source=Comenzar}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch" FontSize="24" Click="btnComenzar_Click"/>
 
                 </Grid>
                 <Grid Grid.Row="3">
@@ -63,7 +63,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnConfig" Content="{Binding Source=Configuracion}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnConfig" Content="{Binding Source=Configuracion}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2"/>
                 </Grid>
                 <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
@@ -72,7 +72,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnCreditos" Content="{Binding Source=Creditos}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnCreditos" Content="{Binding Source=Creditos}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2"/>
                 </Grid>
                 <Grid  Grid.Row="7">
                     <Grid.ColumnDefinitions>
@@ -81,7 +81,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnSalir" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSalir" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2"/>
                 </Grid>
             </Grid>
 
@@ -101,11 +101,11 @@
                     <RowDefinition Height="0.5*"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="btnLogin" Grid.Row="1" Grid.Column="1" Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
-                
-                <Button x:Name="btnRegister" Grid.Row="3" Grid.Column="1" Content="{Binding Source=Register}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnRegister_Click"/>
-                
-                <Button x:Name="btnPrivate" Grid.Row="5" Grid.Column="1" Content="{Binding Source=Private}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}" HorizontalAlignment="Stretch" Click="btnPrivate_Click"/>
+                <Button x:Name="btnLogin" Grid.Row="1" Grid.Column="1" Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
+
+                <Button x:Name="btnRegister" Grid.Row="3" Grid.Column="1" Content="{Binding Source=Register}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnRegister_Click"/>
+
+                <Button x:Name="btnPrivate" Grid.Row="5" Grid.Column="1" Content="{Binding Source=Private}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnPrivate_Click"/>
 
 
             </Grid>
@@ -138,8 +138,8 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="Leave" Grid.Column="1" Grid.Row="0" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}"/>
-                <Button x:Name="Save_Leave" Grid.Column="3" Grid.Row="0" Content="{Binding Source=Salir y guardar}" ContentTemplate="{StaticResource ResourceKey=TitleButtons}"/>
+                <Button x:Name="Leave" Grid.Column="1" Grid.Row="0" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                <Button x:Name="Save_Leave" Grid.Column="3" Grid.Row="0" Content="{Binding Source=Salir y guardar}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
             </Grid>
         </Grid>
         <Grid x:Name="SimPrep" Visibility="Collapsed">
@@ -158,8 +158,8 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="3*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
@@ -169,58 +169,121 @@
                         <GradientStop Color="#FFA8F768" Offset="0.5" />
                     </LinearGradientBrush>
                 </Grid.Background>
+
+                <Grid x:Name="Random" Grid.Row="0" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnRandom" Grid.Row="1" Content="{Binding Source=Generate random initial map}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnRandom_Click" />
+                </Grid>
+
+                <Grid x:Name="PrepOpts" Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label Content="Row Count:" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding Path=Value, ElementName=RowNum, StringFormat='N0'}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Slider x:Name="RowNum" Minimum="0" Maximum="50" HorizontalAlignment="Stretch"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label Content="Column Count:" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding Path=Value, ElementName=ColNum, StringFormat='N0'}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Slider x:Name="ColNum" Minimum="0" Maximum="50"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label Content="Tree Generation probability:" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding Path=Value, ElementName=TreeProb, StringFormat='N0'}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Slider x:Name="TreeProb" Minimum="0" Maximum="10"/>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label Content="Fire probability:" HorizontalAlignment="Left"/>
+                            <TextBox Text="{Binding Path=Value, ElementName=BurnProb, StringFormat='N0'}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <Slider x:Name="BurnProb" Minimum="0" Maximum="10"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnPreview" Grid.Row="1" Grid.Column="0" Content="{Binding Source=Preview}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnPreview_Click"/>
+
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2.7*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button IsEnabled="False" x:Name="btnPlay" Grid.Row="1" Content="{Binding Source=Start simulation}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                </Grid>
+
+                <Grid x:Name="Controls" Grid.Row="4" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2.5*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button IsEnabled="False" x:Name="AutoPlay" Grid.Column="0" Grid.Row="1" Content="{Binding Source=Auto}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="AutoPlay_Click"/>
+                    <Button IsEnabled="False" x:Name="TogglePause" Grid.Column="2" Grid.Row="1" Content="{Binding Source=Pause/Play}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    <Button IsEnabled="False" x:Name="Step" Grid.Column="4" Grid.Row="1" Content="{Binding Source=Step}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="Step_Click"/>
+                </Grid>
+
             </Grid>
 
             <Grid x:Name="Display" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="4*"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="6*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
+
+                <Grid x:Name="Preview" Grid.Row="1" Grid.Column="1">
+
+                </Grid>
+
+                <Button x:Name="ToMenu" Content="{Binding Source=Main Menu}" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2" Click="ToMenu_Click"/>
+
             </Grid>
-        </Grid>
-        <Grid x:Name="GameGrid" Visibility="Collapsed">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <!--14-->
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <!--8-->
-            </Grid.RowDefinitions>
-
-
-            <Border x:Name="brd_btn" BorderBrush="Black" BorderThickness="2" Grid.Row="5" Grid.Column="5">
-                <Button x:Name="btn" Background="green">
-                    <Image Source="images/forest.jpg" Stretch="Fill" />
-                </Button>
-            </Border>
-
         </Grid>
     </Grid>
 </Window>
