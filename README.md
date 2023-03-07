@@ -13,13 +13,11 @@ Fire_Force/
     └── Incendios.sln
 ```
 ## Setup
-----
 -   Before running the solution, run the create table sql located in the Mysql folder in a Mysql server instance.  
 -   Change the connection string in [DatabaseManager.cs](./Incendios/Incendios/DatabaseManager.cs#L15) in line 15 to fit your server.  
 -   Verify that you have the package [MysqlConnector](https://mysqlconnector.net/overview/installing/) installed
 
 ## Description
-----
 The code in ```MainWindow.xml``` is divided in grids:
 ![alt text](./Incendios/Incendios/Images/Grid_Structure.png "Title")
 
