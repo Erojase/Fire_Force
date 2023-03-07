@@ -23,6 +23,7 @@ namespace Incendios
         private Manager mgr;
         private MusicManager MusicMgr;
         private SettingsManager config;
+        private DatabaseManager dbManager;
         private IAudioFiles audioFiles;
 
         private KeyEventHandler AnyKeyHandler;
@@ -35,6 +36,8 @@ namespace Incendios
             mgr = new Manager(this);
             config = new SettingsManager();
             config.LoadConfig();
+
+            dbManager = new DatabaseManager();
 
             MusicMgr = new MusicManager();
             audioFiles = new IAudioFiles();
@@ -67,7 +70,8 @@ namespace Incendios
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            mgr.HideAll();
+            mgr.ShowLogin();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -219,6 +223,38 @@ namespace Incendios
             SongList.SelectedIndex = config.Song;
 
             mgr.ShowConfig();
+        }
+
+        private void log_username_Enter(object sender, RoutedEventArgs e)
+        {
+            if (log_username.Text == "Input user name")
+            {
+                log_username.Foreground = new SolidColorBrush(Colors.Black);
+                log_username.BorderThickness = new Thickness(0, 0, 0, 0);
+                log_username.Text = "";
+            }
+        }
+        private void log_username_Exit(object sender, RoutedEventArgs e)
+        {
+            if (log_username.Text == "")
+            {
+                log_username.Foreground = new SolidColorBrush(Colors.Gray);
+                log_username.BorderThickness = new Thickness(1, 1, 1, 1);
+                log_username.Text = "Input user name";
+            }
+        }
+
+        private void SubmitLogin_Click(object sender, RoutedEventArgs e)
+        {
+            string user = log_username.Text;
+            string password = log_password.Password;
+
+            dbManager.Login(user, password);
+        }
+
+        private void VolumeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            MusicMgr.Volume(((double)VolumeControl.Value)/100);
         }
     }
 }

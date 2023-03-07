@@ -23,6 +23,7 @@ namespace Incendios
             main.Title.Visibility = Visibility.Collapsed;
             main.SimPrep.Visibility = Visibility.Collapsed;
             main.Config.Visibility = Visibility.Collapsed;
+            main.Login_Register.Visibility = Visibility.Collapsed;
         }
 
         public void ShowSimPrep()
@@ -36,6 +37,10 @@ namespace Incendios
         public void ShowMain()
         {
             main.Title.Visibility = Visibility.Visible;
+        }
+        public void ShowLogin()
+        {
+            main.Login_Register.Visibility = Visibility.Visible;
         }
 
         public string[,] GenerateGrid(int RowNum, int ColNum)

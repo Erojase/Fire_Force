@@ -41,5 +41,10 @@ namespace Incendios
             }
             isMuted = !isMuted;
         }
+
+        public void Volume(double vol)
+        {
+            Player.Volume = vol;
+        }
     }
 }
