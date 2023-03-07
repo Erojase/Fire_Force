@@ -2,7 +2,8 @@
 Repo for ```PROYECTO FINAL 2022-2023 2º DAM - DI```
 
 ## Description
-***"Here be dragons"***
+The code in ```MainWindow.xml``` is divided in grids:
+![alt text](./Incendios/Incendios/Images/Grid_Structure.png "Title")
 
 ## Main directory Tree
 ```

@@ -10,7 +10,7 @@
 
 
     <Grid x:Name="main">
-        <Grid x:Name="Title" Visibility="Collapsed">
+        <Grid x:Name="Title" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
@@ -110,7 +110,7 @@
 
             </Grid>
         </Grid>
-        <Grid x:Name="Login_Register" Visibility="Visible">
+        <Grid x:Name="Login_Register" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="4*"/>
