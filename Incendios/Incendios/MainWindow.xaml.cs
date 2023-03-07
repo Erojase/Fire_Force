@@ -249,7 +249,16 @@ namespace Incendios
             string user = log_username.Text;
             string password = log_password.Password;
 
-            dbManager.Login(user, password);
+            string result = dbManager.Login(user, password);
+            if (result != "0")
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos");
+            }
+            else
+            {
+                mgr.HideAll();
+                mgr.ShowSimPrep();
+            }
         }
 
         private void VolumeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

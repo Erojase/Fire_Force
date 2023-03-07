@@ -37,7 +37,7 @@ namespace Incendios
         }
 
 
-        public object Login(string user, string passwd)
+        public string Login(string user, string passwd)
         {
             conn = new MySqlConnection(connStr);
             conn.Open();
@@ -47,8 +47,9 @@ namespace Incendios
             using (MySqlDataReader rdr = cmd.ExecuteReader())
             {
                 rdr.Read();
-                return rdr[0];
+                return rdr[0].ToString();
             }
+            return "";
         }
     }
     
