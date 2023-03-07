@@ -35,9 +35,15 @@ namespace Incendios
         {
             main.Config.Visibility = Visibility.Visible;
         }
+        public void ShowCredits()
+        {
+            main.Credits.Visibility = Visibility.Visible;
+        }
         public void ShowMain()
         {
             main.Title.Visibility = Visibility.Visible;
+            main.Opts.Visibility = Visibility.Visible;
+            main.Login.Visibility = Visibility.Collapsed;
         }
         public void ShowLogin()
         {

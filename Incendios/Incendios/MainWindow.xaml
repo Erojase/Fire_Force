@@ -25,7 +25,7 @@
                 <ImageBrush ImageSource="/Images/backgroud.jpg" TileMode="None"/>
             </Grid.Background>
 
-            <Button x:Name="Mute" Content="{Binding Source=Mute}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Row="0" HorizontalAlignment="Right" Click="Mute_Click"/>
+            <Button x:Name="Mute" Style="{StaticResource btnStyle}" Content="{Binding Source=Mute}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Row="0" HorizontalAlignment="Right" Click="Mute_Click"/>
 
             <Image x:Name="Title_Letters" Grid.Row="1" Source="/Images/fire_force.png" HorizontalAlignment="Center" />
 
@@ -53,7 +53,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnComenzar" Content="{Binding Source=Comenzar}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch" FontSize="24" Click="btnComenzar_Click"/>
+                    <Button x:Name="btnComenzar" Style="{StaticResource btnStyle}" Content="{Binding Source=Comenzar}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch" FontSize="24" Click="btnComenzar_Click"/>
 
                 </Grid>
                 <Grid Grid.Row="3">
@@ -63,7 +63,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnConfig" Content="{Binding Source=Configuracion}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" Click="btnConfig_Click"/>
+                    <Button x:Name="btnConfig" Style="{StaticResource btnStyle}" Content="{Binding Source=Configuracion}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" Click="btnConfig_Click"/>
                 </Grid>
                 <Grid Grid.Row="5">
                     <Grid.ColumnDefinitions>
@@ -72,7 +72,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnCreditos" Content="{Binding Source=Creditos}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnCreditos" Style="{StaticResource btnStyle}" Content="{Binding Source=Creditos}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" Click="btnCreditos_Click"/>
                 </Grid>
                 <Grid  Grid.Row="7">
                     <Grid.ColumnDefinitions>
@@ -81,7 +81,7 @@
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="btnSalir" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnSalir" Style="{StaticResource btnStyle}" Content="{Binding Source=Salir}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="1" Grid.ColumnSpan="2" Click="btnSalir_Click"/>
                 </Grid>
             </Grid>
 
@@ -92,20 +92,17 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1.5*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="0.5*"/>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="0.5*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="1.5*"/>
+
                 </Grid.RowDefinitions>
 
-                <Button x:Name="btnLogin" Grid.Row="1" Grid.Column="1" Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
+                <Button x:Name="btnLogin" Style="{StaticResource btnStyle}" Grid.Row="1" Grid.Column="1" Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnLogin_Click"/>
 
-                <Button x:Name="btnRegister" Grid.Row="3" Grid.Column="1" Content="{Binding Source=Register}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnRegister_Click"/>
-
-                <Button x:Name="btnPrivate" Grid.Row="5" Grid.Column="1" Content="{Binding Source=Private}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnPrivate_Click"/>
+                <Button x:Name="btnPrivate" Style="{StaticResource btnStyle}" Grid.Row="3" Grid.Column="1" Content="{Binding Source=Private}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" HorizontalAlignment="Stretch" Click="btnPrivate_Click"/>
 
 
             </Grid>
@@ -125,7 +122,7 @@
                 <ImageBrush ImageSource="/Images/login.png" TileMode="None"/>
             </Grid.Background>
 
-            <Border  Grid.Row="1" Grid.Column="1" Background="#F2FFFFFF" CornerRadius="10"/>
+            <Border  Grid.Row="1" Grid.Column="1" Background="#E5FDFDFD" CornerRadius="10"/>
             <Grid x:Name="LoginPanel" Visibility="Visible" Grid.Row="1" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
@@ -166,10 +163,80 @@
                         <PasswordBox x:Name="log_password" HorizontalAlignment="Stretch" Background="#00FFDEAD" Width="100" BorderThickness="1"/>
                     </Viewbox>
 
-                    <Button x:Name="SubmitLogin" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"
-                            Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="SubmitLogin_Click" />
+                    <Button x:Name="SubmitLogin" Style="{StaticResource btnStyle}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"
+                            Content="{Binding Source=Login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="SubmitLogin_Click"/>
                 </Grid>
-            </Grid> 
+                <Button x:Name="toRegister" Style="{StaticResource btnStyle}" Grid.Column="1" Grid.Row="2" Background="#00000000" BorderThickness="0" Foreground="#FF1558DC" Margin="10,10,10,10"
+                        Content="{Binding Source=Go to register}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                        Click="toRegister_Click"/>
+            </Grid>
+            <Grid x:Name="RegisterPanel" Visibility="Collapsed" Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Image Source="/Images/register.jpg" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Stretch="Fill"/>
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="{Binding Source=User name:}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                           Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
+                    <Viewbox  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform">
+                        <TextBox x:Name="reg_username" HorizontalAlignment="Stretch" Background="#00FFDEAD"
+                                 Foreground="Gray"
+                                 BorderThickness="1" Text="Input user name"
+                                 GotFocus="reg_username_Enter" LostFocus="reg_username_Exit"/>
+                    </Viewbox>
+
+                    <Label Content="{Binding Source=Password:}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                           Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
+                    <Viewbox  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform">
+                        <PasswordBox x:Name="reg_password" HorizontalAlignment="Stretch" Background="#00FFDEAD" Width="100" BorderThickness="1"/>
+                    </Viewbox>
+
+                    <Label Content="{Binding Source=Repeat Password:}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                           Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
+                    <Viewbox  Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform">
+                        <PasswordBox x:Name="reg_repPassword" HorizontalAlignment="Stretch" Background="#00FFDEAD" Width="100" BorderThickness="1"/>
+                    </Viewbox>
+
+                    <Label Content="{Binding Source=Mail:}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                           Grid.Row="6" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Bottom"/>
+                    <Viewbox  Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform">
+                        <TextBox x:Name="reg_mail" HorizontalAlignment="Stretch" Background="#00FFDEAD"
+                                 Foreground="Gray"
+                                 BorderThickness="1" Text="Input mail"
+                                 GotFocus="reg_mail_Enter" LostFocus="reg_mail_Exit"/>
+                    </Viewbox>
+
+                    <Button x:Name="SubmitRegister" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"
+                            Content="{Binding Source=Register}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="SubmitRegister_Click" />
+                </Grid>
+                <Button x:Name="toLogin" Style="{StaticResource btnStyle}" Grid.Column="0" Grid.Row="2" Background="#00000000" BorderThickness="0" Foreground="#FF1558DC"
+                        Content="{Binding Source=Go to login}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"
+                        Click="toLogin_Click"/>
+            </Grid>
+            <Button Style="{StaticResource btnStyle}" Content="{Binding Source=Main Menu}" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2" Click="ToMenu_Click"/>
         </Grid>
         <Grid x:Name="Config" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
@@ -260,7 +327,7 @@
                         </ComboBoxItem>
                     </ComboBox>
 
-                    <Button Content="Play Sample" FontSize="20" Margin="0,5,0,0" HorizontalAlignment="Center" Click="Button_Click"/>
+                    <Button Content="Play Sample" Style="{StaticResource btnStyle}" FontSize="20" Margin="0,5,0,0" HorizontalAlignment="Center" Click="Button_Click"/>
                 </StackPanel>
 
 
@@ -285,7 +352,7 @@
                 <Button x:Name="Leave" Grid.Column="1" Grid.Row="1" Content="{Binding Source=Exit}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="Leave_Click"/>
                 <Button x:Name="Save_Leave" Grid.Column="3" Grid.Row="1" Content="{Binding Source=Save and Exit}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="Save_Leave_Click"/>
             </Grid>
-            <Button Content="{Binding Source=To Title}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2"
+            <Button Style="{StaticResource btnStyle}" Content="{Binding Source=To Title}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2"
                     Margin="10,10,10,10" HorizontalAlignment="Left" Click="ToMenu_Click"/>
         </Grid>
         <Grid x:Name="SimPrep" Visibility="Collapsed">
@@ -325,7 +392,7 @@
                         <RowDefinition Height="3*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btnRandom" Grid.Row="1" Content="{Binding Source=Generate random initial map}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnRandom_Click" />
+                    <Button x:Name="btnRandom" Style="{StaticResource btnStyle}" Grid.Row="1" Content="{Binding Source=Generate random initial map}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnRandom_Click" />
                 </Grid>
 
                 <Grid x:Name="PrepOpts" Grid.Row="1" Grid.Column="1">
@@ -375,7 +442,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="btnPreview" Grid.Row="1" Grid.Column="0" Content="{Binding Source=Preview}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnPreview_Click"/>
+                    <Button x:Name="btnPreview" Style="{StaticResource btnStyle}" Grid.Row="1" Grid.Column="0" Content="{Binding Source=Preview}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="btnPreview_Click"/>
 
                 </Grid>
                 <Grid Grid.Row="3" Grid.Column="1">
@@ -387,7 +454,7 @@
                         <RowDefinition Height="2.7*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <Button IsEnabled="False" x:Name="btnPlay" Grid.Row="1" Content="{Binding Source=Start simulation}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    <Button Style="{StaticResource btnStyle}" IsEnabled="False" x:Name="btnPlay" Grid.Row="1" Content="{Binding Source=Start simulation}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
                 </Grid>
 
                 <Grid x:Name="Controls" Grid.Row="4" Grid.Column="1">
@@ -404,9 +471,9 @@
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
 
-                    <Button IsEnabled="False" x:Name="AutoPlay" Grid.Column="0" Grid.Row="1" Content="{Binding Source=Auto}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="AutoPlay_Click"/>
-                    <Button IsEnabled="False" x:Name="TogglePause" Grid.Column="2" Grid.Row="1" Content="{Binding Source=Pause/Play}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
-                    <Button IsEnabled="False" x:Name="Step" Grid.Column="4" Grid.Row="1" Content="{Binding Source=Step}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="Step_Click"/>
+                    <Button Style="{StaticResource btnStyle}" IsEnabled="False" x:Name="AutoPlay" Grid.Column="0" Grid.Row="1" Content="{Binding Source=Auto}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="AutoPlay_Click"/>
+                    <Button Style="{StaticResource btnStyle}" IsEnabled="False" x:Name="TogglePause" Grid.Column="2" Grid.Row="1" Content="{Binding Source=Pause/Play}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}"/>
+                    <Button Style="{StaticResource btnStyle}" IsEnabled="False" x:Name="Step" Grid.Column="4" Grid.Row="1" Content="{Binding Source=Step}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Click="Step_Click"/>
                 </Grid>
 
             </Grid>
@@ -427,7 +494,7 @@
 
                 </Grid>
 
-                <Button x:Name="ToMenu" Content="{Binding Source=Main Menu}" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2" Click="ToMenu_Click"/>
+                <Button x:Name="ToMenu" Style="{StaticResource btnStyle}" Content="{Binding Source=Main Menu}" HorizontalAlignment="Left" VerticalAlignment="Bottom" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2" Click="ToMenu_Click"/>
 
             </Grid>
         </Grid>
@@ -480,7 +547,7 @@
                     </TextBlock>
                 </Grid>
             </Grid>
-            <Button Content="{Binding Source=To Title}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2"
+            <Button Style="{StaticResource btnStyle}" Content="{Binding Source=To Title}" ContentTemplate="{StaticResource ResourceKey=ResponsiveText}" Grid.Column="0" Grid.Row="2"
                     Margin="10,10,10,10" HorizontalAlignment="Left" Click="ToMenu_Click"/>
         </Grid>
     </Grid>

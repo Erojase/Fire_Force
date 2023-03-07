@@ -42,7 +42,21 @@ namespace Incendios
             conn = new MySqlConnection(connStr);
             conn.Open();
 
-            string sql = "call incendios.login('"+user+"', '"+passwd+"');";
+            string sql = "call incendios.login('" + user + "', '" + passwd + "');";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            using (MySqlDataReader rdr = cmd.ExecuteReader())
+            {
+                rdr.Read();
+                return rdr[0].ToString();
+            }
+            return "";
+        }
+        public string Register(string user, string passwd, string mail)
+        {
+            conn = new MySqlConnection(connStr);
+            conn.Open();
+
+            string sql = "call incendios.register('" + user + "', '" + passwd + "', '" + mail + "');";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             using (MySqlDataReader rdr = cmd.ExecuteReader())
             {

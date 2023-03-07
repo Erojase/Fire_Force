@@ -29,9 +29,9 @@ namespace Incendios
                 File.WriteAllText("./config", DefaultSettings());
             }
 
-            string[] rawSettings = File.ReadAllText("./config").Split(',');
+            string[] rawSettings = File.ReadAllText("./config").Split(';');
             Song = int.Parse(rawSettings[0].Replace("\n", "").Split(':')[1]);
-            Volume = double.Parse(rawSettings[1].Replace("\n", "").Split(':')[1]);
+            Volume = double.Parse(rawSettings[1].Replace("\n", "").Split(':')[1])/100;
             Resolution = int.Parse(rawSettings[2].Replace("\n", "").Split(':')[1]);
             Difficulty = int.Parse(rawSettings[3].Replace("\n", "").Split(':')[1]);
 
@@ -43,12 +43,12 @@ namespace Incendios
             Volume = volume;
             Resolution = resolutions;
             Difficulty = difficulty;
-            File.WriteAllText("./config", "song:"+song+",\nvolume:"+volume+",\nresolution:"+resolutions+",\ndifficulty:"+difficulty+"");
+            File.WriteAllText("./config", "song:"+song+";\nvolume:"+volume+";\nresolution:"+resolutions+";\ndifficulty:"+difficulty+"");
         }
 
         private string DefaultSettings()
         {
-            return "song:0,\nvolume:0.5,\nresolution:0,\ndifficulty:1";
+            return "song:0;\nvolume:50;\nresolution:0;\ndifficulty:1";
         }
     }
 }

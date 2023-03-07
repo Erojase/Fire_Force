@@ -75,11 +75,16 @@ namespace Incendios
             mgr.ShowLogin();
         }
 
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        private void btnCreditos_Click(object sender, RoutedEventArgs e)
         {
-
+            mgr.HideAll();
+            mgr.ShowCredits();
         }
 
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void btnPrivate_Click(object sender, RoutedEventArgs e)
         {
             mgr.HideAll();
@@ -264,6 +269,70 @@ namespace Incendios
             log_username.Text = "";
         }
 
+        private void reg_username_Enter(object sender, RoutedEventArgs e)
+        {
+            if (reg_username.Text == "Input user name")
+            {
+                reg_username.Foreground = new SolidColorBrush(Colors.Black);
+                reg_username.BorderThickness = new Thickness(0, 0, 0, 0);
+                reg_username.Text = "";
+            }
+        }
+        private void reg_username_Exit(object sender, RoutedEventArgs e)
+        {
+            if (reg_username.Text == "")
+            {
+                reg_username.Foreground = new SolidColorBrush(Colors.Gray);
+                reg_username.BorderThickness = new Thickness(1, 1, 1, 1);
+                reg_username.Text = "Input user name";
+            }
+        }
+
+        private void reg_mail_Enter(object sender, RoutedEventArgs e)
+        {
+            if (reg_mail.Text == "Input mail")
+            {
+                reg_mail.Foreground = new SolidColorBrush(Colors.Black);
+                reg_mail.BorderThickness = new Thickness(0, 0, 0, 0);
+                reg_mail.Text = "";
+            }
+        }
+        private void reg_mail_Exit(object sender, RoutedEventArgs e)
+        {
+            if (reg_mail.Text == "")
+            {
+                reg_mail.Foreground = new SolidColorBrush(Colors.Gray);
+                reg_mail.BorderThickness = new Thickness(1, 1, 1, 1);
+                reg_mail.Text = "Input mail";
+            }
+        }
+
+        private void SubmitRegister_Click(object sender, RoutedEventArgs e)
+        {
+            string user = reg_username.Text;
+            string password = reg_password.Password;
+            string mail = reg_mail.Text;
+
+            if (password != reg_repPassword.Password)
+            {
+                MessageBox.Show("Las contraseñas introducidas no coinciden");
+                return;
+            }
+
+            string result = dbManager.Register(user, password, mail);
+            if (result != "0")
+            {
+                MessageBox.Show("No se ha podido registrar");
+            }
+            else
+            {
+                RegisterPanel.Visibility = Visibility.Collapsed;
+                LoginPanel.Visibility = Visibility.Visible;
+            }
+            reg_password.Password = "";
+            reg_username.Text = "";
+        }
+
         private void VolumeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             MusicMgr.Volume(((double)VolumeControl.Value)/100);
@@ -273,6 +342,17 @@ namespace Incendios
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
             e.Handled = true;
+        }
+
+        private void toLogin_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterPanel.Visibility = Visibility.Collapsed;
+            LoginPanel.Visibility = Visibility.Visible;
+        }
+        private void toRegister_Click(object sender, RoutedEventArgs e)
+        {
+            LoginPanel.Visibility = Visibility.Collapsed;
+            RegisterPanel.Visibility = Visibility.Visible;
         }
     }
 }
