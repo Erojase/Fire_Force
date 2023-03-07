@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -259,11 +260,19 @@ namespace Incendios
                 mgr.HideAll();
                 mgr.ShowSimPrep();
             }
+            log_password.Password = "";
+            log_username.Text = "";
         }
 
         private void VolumeControl_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             MusicMgr.Volume(((double)VolumeControl.Value)/100);
+        }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
+            e.Handled = true;
         }
     }
 }

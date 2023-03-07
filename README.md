@@ -1,5 +1,5 @@
-# Fire Force
-Repo for ```PROYECTO FINAL 2022-2023 2º DAM - DI```
+# Fire Force - Eduardo Rojas Sánchez
+
 
 ## Description
 The code in ```MainWindow.xml``` is divided in grids:
@@ -20,6 +20,6 @@ Fire_Force/
 <br/><br/>
 
 ## Possible issues
-|              Error name                |                Possible solution                  |
-|----------------------------------------|---------------------------------------------------|
+|              Error name                |                Possible solution                   |
+|----------------------------------------|----------------------------------------------------|
 |System.Windows.Markup.XamlParseException|Re-add Images and Audios to their respective folders|

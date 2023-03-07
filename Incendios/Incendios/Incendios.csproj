@@ -136,6 +136,7 @@
     <Content Include="Audio\At_Dooms_Gate.mp3" />
     <Content Include="Audio\Fire_Force_Main.mp3" />
     <Content Include="Audio\tuba.mp3" />
+    <Resource Include="Images\credits.png" />
     <Resource Include="Images\login.jpg" />
     <Resource Include="Images\login.png" />
     <Resource Include="Images\settings.png" />

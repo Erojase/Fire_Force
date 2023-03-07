@@ -24,6 +24,7 @@ namespace Incendios
             main.SimPrep.Visibility = Visibility.Collapsed;
             main.Config.Visibility = Visibility.Collapsed;
             main.Login_Register.Visibility = Visibility.Collapsed;
+            main.Credits.Visibility = Visibility.Collapsed;
         }
 
         public void ShowSimPrep()
