@@ -22,6 +22,7 @@ namespace Incendios
 
         private Manager mgr;
         private MusicManager MusicMgr;
+        private SettingsManager config;
         private IAudioFiles audioFiles;
 
         private KeyEventHandler AnyKeyHandler;
@@ -32,6 +33,9 @@ namespace Incendios
         {
             InitializeComponent();
             mgr = new Manager(this);
+            config = new SettingsManager();
+            config.LoadConfig();
+
             MusicMgr = new MusicManager();
             audioFiles = new IAudioFiles();
 
@@ -39,13 +43,14 @@ namespace Incendios
 
             AnyKeyHandler =  new KeyEventHandler(MainWindow_KeyDown);
             KeyDown += AnyKeyHandler;
+
         }
 
         void MainWindow_KeyDown(object sender, KeyEventArgs e)
         {
             AnyKey.Visibility = Visibility.Collapsed;
             Opts.Visibility = Visibility.Visible;
-            MusicMgr.Play(audioFiles.main);
+            MusicMgr.Play(audioFiles.IntToSong(config.Song));
             KeyDown -= AnyKeyHandler;
         }
 
@@ -183,6 +188,37 @@ namespace Incendios
         {
             mgr.HideAll();
             mgr.ShowMain();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MusicMgr.Play(audioFiles.IntToSong(SongList.SelectedIndex));
+            
+        }
+
+        private void Leave_Click(object sender, RoutedEventArgs e)
+        {
+            mgr.HideAll();
+            mgr.ShowMain();
+        }
+
+        private void Save_Leave_Click(object sender, RoutedEventArgs e)
+        {
+            mgr.HideAll();
+            config.SaveSettings(Resolutions.SelectedIndex, Difficulty.SelectedIndex, VolumeControl.Value, SongList.SelectedIndex);
+            mgr.ShowMain();
+        }
+
+        private void btnConfig_Click(object sender, RoutedEventArgs e)
+        {
+            mgr.HideAll();
+
+            Resolutions.SelectedIndex = config.Resolution;
+            Difficulty.SelectedIndex = config.Difficulty;
+            VolumeControl.Value = config.Volume;
+            SongList.SelectedIndex = config.Song;
+
+            mgr.ShowConfig();
         }
     }
 }

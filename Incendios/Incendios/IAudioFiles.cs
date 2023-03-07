@@ -8,11 +8,30 @@ namespace Incendios
 {
     internal class IAudioFiles
     {
-        public string main;
+        public string principal;
+        public string classic;
+        public string windy;
 
         public IAudioFiles()
         {
-            main = "..\\..\\audio\\fire_force_main.mp3";
+            principal = "..\\..\\audio\\fire_force_main.mp3";
+            classic = "..\\..\\audio\\At_Dooms_Gate.mp3";
+            windy = "..\\..\\audio\\tuba.mp3";
+        }
+
+        public string IntToSong(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return principal;
+                case 1:
+                    return classic;
+                case 2:
+                    return windy;
+                default:
+                    return principal;
+            }
         }
     }
 }
