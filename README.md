@@ -19,11 +19,12 @@ Fire_Force/
 
 ## Description
 The code in ```MainWindow.xml``` is divided in grids:
-![alt text](./Incendios/Incendios/Images/Grid_Structure.png "Title")
+![alt text](./Incendios/Incendios/Images/Grid_Structure.png)
 
 For visualization porpouses, it's recommended to collapse all grids and only open one at a time.
 
-
+## Project structure
+![alt text](./Incendios/Incendios/Images/ProjectDiagram.jpg)
 <br/><br/>
 
 ## Possible issues
